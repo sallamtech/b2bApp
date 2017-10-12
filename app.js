@@ -1,14 +1,33 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const AWS = require('aws-sdk');
+require('extend-aws-error')({ AWS });
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const passport = require('passport');
+const dynamo = require('dynamodb');
+// const AWS = dynamo.AWS;
+// AWS.config.loadFromPath(process.env.HOME + '/.aws/b2bcredentials.json');
+const session = require('express-session');
+const DynamoStore = require('connect-dynamodb-session')(session);
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+app.use(session({
+  store: new DynamoStore({
+      region: 'us-east-1',
+      tableName: 'b2bsessions',
+      cleanupInterval: 100000,
+      touchAfter: 0
+  }),
+  secret: 'foo'
+}))
+app.use(passport.initialize())
+app.use(passport.session())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
