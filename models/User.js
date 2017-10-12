@@ -7,9 +7,9 @@ var dynamo = require('dynamodb'),
 AWS.config.loadFromPath(process.env.HOME + '/.aws/credentials.json');
 dynamo.AWS.config.update({region: "us-east-1"});
 
-var Account = dynamo.define('Hlls-Accounts', {
+var User = dynamo.define('b2b-users', {
   hashKey : 'customerID',
-  tableName: 'Hlls-Accounts',
+  tableName: 'b2b-users',
   timestamps : true,
   schema : {
       customerID: dynamo.types.uuid(),
@@ -32,4 +32,4 @@ var Account = dynamo.define('Hlls-Accounts', {
   }
 });
 
-module.exports = Account
+module.exports = User
