@@ -13,6 +13,10 @@ const dynamo = require('dynamodb');
 const session = require('express-session');
 const DynamoStore = require('connect-dynamodb-session')(session);
 
+
+// Eminem is edgy
+
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 
