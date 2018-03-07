@@ -1,33 +1,18 @@
-const express = require('express');
-const AWS = require('aws-sdk');
-require('extend-aws-error')({ AWS });
-const path = require('path');
-const favicon = require('serve-favicon');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const passport = require('passport');
-const dynamo = require('dynamodb');
-// const AWS = dynamo.AWS;
-// AWS.config.loadFromPath(process.env.HOME + '/.aws/b2bcredentials.json');
-const session = require('express-session');
+var express = require('express');
+var path = require('path');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var flash = require('connect-flash');
+var passport = require('passport');
+var session = require('express-session');
 const DynamoStore = require('connect-dynamodb-session')(session);
+
+var app = express();
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-
-var app = express();
-app.use(session({
-  store: new DynamoStore({
-      region: 'us-east-1',
-      tableName: 'b2bsessions',
-      cleanupInterval: 100000,
-      touchAfter: 0
-  }),
-  secret: 'foo'
-}))
-app.use(passport.initialize())
-app.use(passport.session())
+var businesses = require('./routes/business');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,10 +30,28 @@ app.use(require('node-sass-middleware')({
   indentedSyntax: true,
   sourceMap: true
 }));
+
+app.use(session({
+  secret: 'foo',
+  resave: true,
+  saveUninitialized: true,
+  store: new DynamoStore({
+    region: 'us-east-1',
+    tableName: 'b2bsessions',
+    cleanupInterval: 100000,
+    touchAfter: 0
+  })
+}));
+
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash());
+//Set Static Folder
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/businesses', businesses);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
