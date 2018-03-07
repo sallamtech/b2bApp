@@ -57041,17 +57041,18 @@
 	                                )
 	                            ),
 	                            _react2.default.createElement('br', null),
+	                            _react2.default.createElement('br', null),
 	                            _react2.default.createElement(
 	                                'span',
 	                                null,
-	                                'New York',
-	                                _react2.default.createElement(
-	                                    'strong',
-	                                    null,
-	                                    ' 22 minutes ago'
-	                                )
+	                                'New York, NY'
 	                            ),
-	                            _react2.default.createElement('br', null)
+	                            _react2.default.createElement('br', null),
+	                            _react2.default.createElement(
+	                                'span',
+	                                null,
+	                                'Added at 06:55 pm, Ad ID: 987654321'
+	                            )
 	                        )
 	                    ),
 	                    _react2.default.createElement(

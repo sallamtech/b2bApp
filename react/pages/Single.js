@@ -22,8 +22,9 @@ class Single extends React.Component {
                     
                         <Card className='white' textClassName='black-text' title='Iphone 7'>
                             <span>Min Price: <strong>$300</strong></span><br/>
-                            <span>Max Price: <strong>$800</strong></span><br/>
-                            <span>New York<strong> 22 minutes ago</strong></span><br/>
+                            <span>Max Price: <strong>$800</strong></span><br/><br/>
+                            <span>New York, NY</span><br/>
+                            <span>Added at 06:55 pm, Ad ID: 987654321</span>
                         </Card>
                     
                     </Col>
