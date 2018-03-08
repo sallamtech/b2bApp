@@ -14,9 +14,12 @@ import Single from './pages/Single';
 import UserLogin from './pages/Login';
 import Footer from './pages/Footer';
 import UserRegister from './pages/Signup';
+import Account from './pages/Account';
+import Businesses from './pages/Businesses';
 
 import ProductBox from './components/product/ProductBox';
 import CategoryBox from './components/product-category/CategoryBox';
+import OrderBox from './components/order/OrderBox';
 
 // let unsubscribe = store.subscribe(() =>
 //   console.log(store.getState())
@@ -35,8 +38,11 @@ const App = () => (
           <Route path="/dashboard" component={Dashboard}/>
           <Route path="/dashboard/categories" component={CategoryBox}/>
           <Route path="/dashboard/products" component={ProductBox}/>
+          <Route path="/dashboard/orders" component={OrderBox}/>
           <Route path="/profile" component={Profile}/>
           <Route path="/single" component={Single}/>
+          <Route path="/account" component={Account}/>
+          <Route path="/businesses" component={Businesses}/>
       </section>
     </div>
     

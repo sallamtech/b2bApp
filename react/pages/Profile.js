@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Route, Link, Redirect } from 'react-router-dom';
-import {SideNavItem, SideNav, Navbar, Icon, Button, Dropdown, NavItem, Collection, CollectionItem, Badge, Card, CardTitle, Col, Row, CardPanel} from 'react-materialize';
+import {Autocomplete, Input, SideNavItem, SideNav, Navbar, Icon, Button, Dropdown, NavItem, Collection, CollectionItem, Badge, Card, CardTitle, Col, Row, CardPanel, Carousel, Slider, Slide, Modal, Chip, Tag} from 'react-materialize';
 import ProductBox from '../components/product/ProductBox';
 
 class Profile extends React.Component {
@@ -11,46 +11,98 @@ class Profile extends React.Component {
             <div className="Profile">
                 
                 <Row>
-                    <Col s={12} m={5}>
-                        <h4>Store Details</h4>
-                    </Col>
-                </Row>
                 
-                <Row>
-                    
                     <Col s={12} m={5}>
                     
-                        <Card className='small'
-                            header={<CardTitle image='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBT0QipkXJK-XJfeV-WqoYKjOSCM8Z1-4stPzfQ3beCCLFwOMn'>Example Store</CardTitle>}
-                            actions={[<a href='#'>Send Message</a>]}>
-                            <span>Phone Number: 555-555-5555<br/>Address: 123 Street Address</span>
+                        <Card className='white' textClassName='black-text' title=''>
+                            <Chip>
+                              <img src='http://materializecss.com/images/yuna.jpg' alt='Contact Person' />
+                              Example Store
+                            </Chip>
+                            <br/>
+                            <span><strong>New York</strong></span><br/>
+                        	    <span>Joined on October 4, 2017</span><br/>
+                        	    <hr/>
+                        	    <span><strong>Phone Number: </strong><br/>555-555-5555</span><br/><br/>
+                        	    <span><strong>Address: </strong><br/>123 Street Address, New York, NY 12345</span>
+                        	    
+                        	    <br/><br/>
+                                <Modal
+                          header='Post Review'
+                          fixedFooter
+                          trigger={<Button className='light-blue darken-4'>Post Review</Button>}>
+                          
+                           <form s={6} xs={6} onSubmit={this.handleSubmit}>  
+                            <Row>
+                            
+                            <Input s={12} type='select' label="" defaultValue='1'>
+                                <option value='1'>Positive</option>
+                                <option value='2'>Negative</option>
+                            </Input>
+                            
+                            <Input type="textarea" name="content" s={12} label="Content" onChange={this.handleChange} />
+                            
+                            <Autocomplete
+                                title='Related Product'
+                                data={
+                                  {
+                                    'Iphone 7': null
+                                  }
+                                }
+                              />
+                            
+                            </Row>  
+                            
+                            <Button class="blue" waves='light' type="submit">Post Review</Button>
+                        </form>   
+                        
+                        
+                        </Modal>
+                        	    
                         </Card>
                     
                     </Col>
                     
                     <Col s={12} m={7}>
-                    
+                        
+                        
+                        
                         <CardPanel className='white' textClassName='black-text'>
-                            <h5>3 items by <strong>Example Store</strong></h5>
+                            <h5>5 products by <strong>Example Store</strong></h5>
                         </CardPanel>
                         
-                        <Card className='white' textClassName='black-text' title='Iphone 7' actions={[<a href='#'>View</a>]}>
-                            <span>Min Price: <strong>$300</strong></span><br/>
-                            <span>Max Price: <strong>$800</strong></span><br/>
+                        <Card 
+                        header=''
+                        className='white' textClassName='black-text' title='Iphone 7' actions={[<Button className='red darken-1' waves='light' node='a' href='#single'>View product</Button>]}>
+                            <span>New York&nbsp;&nbsp;<strong>$300 - $800</strong><br/><br/>Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time</span>
                         </Card>
                         
-                        <Card className='white' textClassName='black-text' title='Iphone 7' actions={[<a href='#'>View</a>]}>
-                            <span>Min Price: <strong>$300</strong></span><br/>
-                            <span>Max Price: <strong>$800</strong></span><br/>
+                        <Card 
+                        header=''
+                        className='white' textClassName='black-text' title='Iphone 7' actions={[<Button className='red darken-1' waves='light' node='a' href='#single'>View product</Button>]}>
+                            <span>New York&nbsp;&nbsp;<strong>$300 - $800</strong><br/><br/>Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time</span>
                         </Card>
                         
-                        <Card className='white' textClassName='black-text' title='Iphone 7' actions={[<a href='#'>View</a>]}>
-                            <span>Min Price: <strong>$300</strong></span><br/>
-                            <span>Max Price: <strong>$800</strong></span><br/>
+                        <Card 
+                        header=''
+                        className='white' textClassName='black-text' title='Iphone 7' actions={[<Button className='red darken-1' waves='light' node='a' href='#single'>View product</Button>]}>
+                            <span>New York&nbsp;&nbsp;<strong>$300 - $800</strong><br/><br/>Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time</span>
+                        </Card>
+                        
+                        <Card 
+                        header=''
+                        className='white' textClassName='black-text' title='Iphone 7' actions={[<Button className='red darken-1' waves='light' node='a' href='#single'>View product</Button>]}>
+                            <span>New York&nbsp;&nbsp;<strong>$300 - $800</strong><br/><br/>Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time</span>
+                        </Card>
+                        
+                        <Card 
+                        header=''
+                        className='white' textClassName='black-text' title='Iphone 7' actions={[<Button className='red darken-1' waves='light' node='a' href='#single'>View product</Button>]}>
+                            <span>New York&nbsp;&nbsp;<strong>$300 - $800</strong><br/><br/>Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time</span>
                         </Card>
                         
                     </Col>
-
+                    
                 </Row>
 
             </div>

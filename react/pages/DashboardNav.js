@@ -44,8 +44,8 @@ class DashNav extends React.Component {
                 <Dropdown trigger={
             		<li class="bold"><a class="collapsible-header waves-effect waves-teal"> <i class="material-icons">shopping_basket</i> Orders</a></li>
             	}>
-            	<li class="bold" onClick={this.props.showProductBox}><a class="collapsible-header waves-effect waves-teal black-text">All Orders</a></li>
-            	<li class="bold" onClick={this.props.showProductBox}><a class="collapsible-header waves-effect waves-teal black-text">Recent Orders</a></li>
+            	<li class="bold"><a href="#dashboard/orders" class="collapsible-header waves-effect waves-teal black-text">All Orders</a></li>
+            	<li class="bold"><a href="#dashboard/orders" class="collapsible-header waves-effect waves-teal black-text">Recent Orders</a></li>
             
             	<NavItem divider />
             	<li class="bold"><a class="collapsible-header waves-effect waves-teal grey-text">Other Orders</a></li>
