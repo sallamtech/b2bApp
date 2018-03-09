@@ -30,7 +30,7 @@ class Profile extends React.Component {
                                 <Modal
                           header='Post Review'
                           fixedFooter
-                          trigger={<Button className='light-blue darken-4'>Post Review</Button>}>
+                          trigger={<Button className='red darken-1'>Post Review</Button>}>
                           
                            <form s={6} xs={6} onSubmit={this.handleSubmit}>  
                             <Row>
@@ -68,37 +68,61 @@ class Profile extends React.Component {
                         
                         
                         <CardPanel className='white' textClassName='black-text'>
-                            <h5>5 products by <strong>Example Store</strong></h5>
+                            <h5>3 products by <strong>Example Store</strong></h5>
                         </CardPanel>
                         
                         <Card 
                         header=''
-                        className='white' textClassName='black-text' title='Iphone 7' actions={[<Button className='red darken-1' waves='light' node='a' href='#single'>View product</Button>]}>
+                        className='white' textClassName='black-text' title='Iphone 7'>
                             <span>New York&nbsp;&nbsp;<strong>$300 - $800</strong><br/><br/>Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time</span>
+                        <br/><br/>
+                        <Button className='light-blue darken-4' waves='light' node='a' href='#single'>View</Button>
+                        &nbsp;&nbsp;&nbsp;
+                        <Modal
+                              header=''
+                              trigger={<Button className='red darken-1'>Add to cart</Button>}>
+                              <p>"iPhone 7" has been added to your cart.</p><br/>
+                              <div>
+                                <Button className='red darken-1' waves='light' node='a' href='#cart'>View cart</Button>
+                            </div>
+                            </Modal>
+                        
                         </Card>
                         
                         <Card 
                         header=''
-                        className='white' textClassName='black-text' title='Iphone 7' actions={[<Button className='red darken-1' waves='light' node='a' href='#single'>View product</Button>]}>
+                        className='white' textClassName='black-text' title='Iphone 7'>
                             <span>New York&nbsp;&nbsp;<strong>$300 - $800</strong><br/><br/>Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time</span>
+                        <br/><br/>
+                        <Button className='light-blue darken-4' waves='light' node='a' href='#single'>View</Button>
+                        &nbsp;&nbsp;&nbsp;
+                        <Modal
+                              header=''
+                              trigger={<Button className='red darken-1'>Add to cart</Button>}>
+                              <p>"iPhone 7" has been added to your cart.</p><br/>
+                              <div>
+                                <Button className='red darken-1' waves='light' node='a' href='#cart'>View cart</Button>
+                            </div>
+                            </Modal>
+                        
                         </Card>
                         
                         <Card 
                         header=''
-                        className='white' textClassName='black-text' title='Iphone 7' actions={[<Button className='red darken-1' waves='light' node='a' href='#single'>View product</Button>]}>
+                        className='white' textClassName='black-text' title='Iphone 7'>
                             <span>New York&nbsp;&nbsp;<strong>$300 - $800</strong><br/><br/>Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time</span>
-                        </Card>
+                        <br/><br/>
+                        <Button className='light-blue darken-4' waves='light' node='a' href='#single'>View</Button>
+                        &nbsp;&nbsp;&nbsp;
+                        <Modal
+                              header=''
+                              trigger={<Button className='red darken-1'>Add to cart</Button>}>
+                              <p>"iPhone 7" has been added to your cart.</p><br/>
+                              <div>
+                                <Button className='red darken-1' waves='light' node='a' href='#cart'>View cart</Button>
+                            </div>
+                            </Modal>
                         
-                        <Card 
-                        header=''
-                        className='white' textClassName='black-text' title='Iphone 7' actions={[<Button className='red darken-1' waves='light' node='a' href='#single'>View product</Button>]}>
-                            <span>New York&nbsp;&nbsp;<strong>$300 - $800</strong><br/><br/>Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time</span>
-                        </Card>
-                        
-                        <Card 
-                        header=''
-                        className='white' textClassName='black-text' title='Iphone 7' actions={[<Button className='red darken-1' waves='light' node='a' href='#single'>View product</Button>]}>
-                            <span>New York&nbsp;&nbsp;<strong>$300 - $800</strong><br/><br/>Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time</span>
                         </Card>
                         
                     </Col>

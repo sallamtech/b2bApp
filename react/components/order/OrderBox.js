@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Table, Button} from 'react-materialize';
-//import { makeData } from "./Data";
+import OrderTable from "./OrderTable";
 
 // Import React Table
 import ReactTable from "react-table";
@@ -12,18 +12,18 @@ class Orders extends React.Component {
     super();
     this.state = {
       data: [
-          {orderId: '434344c7', productName: 'Iphone', customerName: 'Davin Jay', orderDate: '05/07/2019', orderStatus: 'Shipped'},
-          {orderId: '434344c7', productName: 'Iphone', customerName: 'Davin Jay', orderDate: '06/07/2019', orderStatus: 'New'},
-          {orderId: '434344c7', productName: 'Iphone', customerName: 'Davin Jay', orderDate: '07/07/2019', orderStatus: 'Confirmed'},
-          {orderId: '434344c7', productName: 'Iphone', customerName: 'Davin Jay', orderDate: '08/07/2019', orderStatus: 'Confirmed'},
-          {orderId: '434344c7', productName: 'Iphone', customerName: 'Davin Jay', orderDate: '08/07/2019', orderStatus: 'Confirmed'},
-          {orderId: '434344c7', productName: 'Iphone', customerName: 'Davin Jay', orderDate: '09/07/2019', orderStatus: 'New'},
-          {orderId: '434344c7', productName: 'Iphone', customerName: 'Davin Jay', orderDate: '10/07/2019', orderStatus: 'Shipped'},
-          {orderId: '434344c7', productName: 'Iphone', customerName: 'Davin Jay', orderDate: '09/07/2019', orderStatus: 'New'},
-          {orderId: '434344c7', productName: 'Iphone', customerName: 'Davin Jay', orderDate: '03/07/2019', orderStatus: 'New'},
-          {orderId: '434344c7', productName: 'Iphone', customerName: 'Davin Jay', orderDate: '05/07/2019', orderStatus: 'Shipped'},
-          {orderId: '434344c7', productName: 'Iphone', customerName: 'Davin Jay', orderDate: '06/07/2019', orderStatus: 'Shipped'},
-          {orderId: '434344c7', productName: 'Iphone', customerName: 'Davin Jay', orderDate: '03/07/2019', orderStatus: 'Shipped'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '05/07/2019', orderStatus: 'Shipped'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '06/07/2019', orderStatus: 'New'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '07/07/2019', orderStatus: 'Confirmed'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '08/07/2019', orderStatus: 'Confirmed'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '08/07/2019', orderStatus: 'Confirmed'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '09/07/2019', orderStatus: 'New'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '10/07/2019', orderStatus: 'Shipped'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '09/07/2019', orderStatus: 'New'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '03/07/2019', orderStatus: 'New'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '05/07/2019', orderStatus: 'Shipped'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '06/07/2019', orderStatus: 'Shipped'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '03/07/2019', orderStatus: 'Shipped'},
         ],
     };
   }
@@ -48,11 +48,11 @@ class Orders extends React.Component {
                     row[filter.id].endsWith(filter.value)
                 },
                 {
-                  Header: "Product Name",
-                  id: "productName",
-                  accessor: d => d.productName,
+                  Header: "Customer Name",
+                  id: "customerName",
+                  accessor: d => d.customerName,
                   filterMethod: (filter, rows) =>
-                    matchSorter(rows, filter.value, { keys: ["productName"] }),
+                    matchSorter(rows, filter.value, { keys: ["customerName"] }),
                   filterAll: true
                 }
               ]
@@ -113,6 +113,20 @@ class OrderBox extends Component {
     super(props);
     
     this.state = { 
+       data: [
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '05/07/2019', orderStatus: 'Shipped'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '06/07/2019', orderStatus: 'New'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '07/07/2019', orderStatus: 'Confirmed'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '08/07/2019', orderStatus: 'Confirmed'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '08/07/2019', orderStatus: 'Confirmed'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '09/07/2019', orderStatus: 'New'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '10/07/2019', orderStatus: 'Shipped'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '09/07/2019', orderStatus: 'New'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '03/07/2019', orderStatus: 'New'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '05/07/2019', orderStatus: 'Shipped'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '06/07/2019', orderStatus: 'Shipped'},
+          {orderId: '434344c7', customerName: 'Davin Jay', orderDate: '03/07/2019', orderStatus: 'Shipped'},
+        ],
       authUser: null
      };
     this.pollInterval = null;
@@ -127,9 +141,10 @@ class OrderBox extends Component {
         
     
     return (
-      <div className="center container right" style={divStyle}>
+      <div className="container right" style={divStyle}>
+      <h4 class=''>Orders Page</h4>
        
-       <Orders/>
+       <OrderTable data={this.state.data}/>
        
         {/* <ProductList data={ this.state.data }/>*/}
 

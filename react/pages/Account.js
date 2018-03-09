@@ -19,22 +19,180 @@ class Account extends React.Component {
                         </CardPanel>
                         
                         <Tabs className='z-depth-1'>
-                            <Tab title="Your Listings">
+                            <Tab title="Your Products">
                                 
-                                <Collapsible popout defaultActiveKey={0}>
-                                  <CollapsibleItem header='Iphone 7'>
-                                    <span>December 19, 2017<br/><a href="#"><strong>ACTIVE</strong></a>&nbsp;-&nbsp;<a href="#">Edit</a>&nbsp;-&nbsp;<a href="#">Delete</a></span>
-                                  </CollapsibleItem>
-                                  <CollapsibleItem header='Iphone 7'>
-                                    <span>December 19, 2017<br/><a href="#"><strong>ACTIVE</strong></a>&nbsp;-&nbsp;<a href="#">Edit</a>&nbsp;-&nbsp;<a href="#">Delete</a></span>
-                                  </CollapsibleItem>
-                                  <CollapsibleItem header='Iphone 7'>
-                                    <span>December 19, 2017<br/><a href="#"><strong>ACTIVE</strong></a>&nbsp;-&nbsp;<a href="#">Edit</a>&nbsp;-&nbsp;<a href="#">Delete</a></span>
-                                  </CollapsibleItem>
-                                </Collapsible>
-                            
+                                <Card 
+                                  header=''
+                                  className='white' 
+                                  textClassName='black-text' 
+                                  title='Iphone 7'>
+                                      <span>New York&nbsp;&nbsp;<strong>$300 - $800</strong>
+                                      <br/><br/>Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time
+                                      </span>
+                                      <br/><br/>
+                                      <Button className='light-blue darken-4' waves='light' node='a' href='#single'>View</Button>
+                                      &nbsp;&nbsp;&nbsp;
+                                      <Modal
+                                        header='Edit Product'
+                                        fixedFooter
+                                        trigger={<Button className='red darken-1'>Edit</Button>}>
+                                        
+                                         <form s={6} xs={6} onSubmit={this.handleSubmit}>  
+                                          <Row>
+                                          
+                                          <Input placeholder="" s={6} label="Title" />
+                                          
+                                          <Input placeholder="" s={6} label="Price ($)" />
+                                          
+                                          <Input placeholder="" s={6} label="Address" />
+                                          
+                                          <Input s={6} type='select' label="Location" defaultValue='1'>
+                                              <option value='1'>New York</option>
+                                              <option value='2'>Negative</option>
+                                          </Input>
+                                          
+                                          <Input s={12} type='select' label="Category" defaultValue='1'>
+                                            <option value='1'>Select some categories</option>
+                                            <option value='2'>Category 1</option>
+                                            <option value='3'>Category 2</option>
+                                          </Input>
+                                          
+                                          <Input type="textarea" name="description" s={12} label="Description" onChange={this.handleChange} />
+                                          
+                                          <Input name='sold' type='checkbox' value='sold' label='Mark as Sold' />
+                                          
+                                          </Row>  
+                                          
+                                          <Button className='light-blue darken-4' waves='light' type="submit">Save</Button>
+                                          &nbsp;&nbsp;&nbsp;
+                                          <Modal
+                                            header=''
+                                            trigger={<Button className='red darken-1'>Delete</Button>}>
+                                            <p>"iPhone 7" has been archived.</p><br/>
+                                            <div>
+                                              <Button className='red darken-1' waves='light' node='a'>Undo</Button>
+                                          </div>
+                                          </Modal>
+                                      </form>   
+                                      
+                                      </Modal>
+                                  </Card>
+                                  
+                                  <Card 
+                                  header=''
+                                  className='white' 
+                                  textClassName='black-text' 
+                                  title='Iphone 7'>
+                                      <span>New York&nbsp;&nbsp;<strong>$300 - $800</strong>
+                                      <br/><br/>Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time
+                                      </span>
+                                      <br/><br/>
+                                      <Button className='light-blue darken-4' waves='light' node='a' href='#single'>View</Button>
+                                      &nbsp;&nbsp;&nbsp;
+                                      <Modal
+                                        header='Edit Product'
+                                        fixedFooter
+                                        trigger={<Button className='red darken-1'>Edit</Button>}>
+                                        
+                                         <form s={6} xs={6} onSubmit={this.handleSubmit}>  
+                                          <Row>
+                                          
+                                          <Input placeholder="" s={6} label="Title" />
+                                          
+                                          <Input placeholder="" s={6} label="Price ($)" />
+                                          
+                                          <Input placeholder="" s={6} label="Address" />
+                                          
+                                          <Input s={6} type='select' label="Location" defaultValue='1'>
+                                              <option value='1'>New York</option>
+                                              <option value='2'>Negative</option>
+                                          </Input>
+                                          
+                                          <Input s={12} type='select' label="Category" defaultValue='1'>
+                                            <option value='1'>Select some categories</option>
+                                            <option value='2'>Category 1</option>
+                                            <option value='3'>Category 2</option>
+                                          </Input>
+                                          
+                                          <Input type="textarea" name="description" s={12} label="Description" onChange={this.handleChange} />
+                                          
+                                          <Input name='sold' type='checkbox' value='sold' label='Mark as Sold' />
+                                          
+                                          </Row>  
+                                          
+                                          <Button className='light-blue darken-4' waves='light' type="submit">Save</Button>
+                                          &nbsp;&nbsp;&nbsp;
+                                          <Modal
+                                            header=''
+                                            trigger={<Button className='red darken-1'>Delete</Button>}>
+                                            <p>"iPhone 7" has been archived.</p><br/>
+                                            <div>
+                                              <Button className='red darken-1' waves='light' node='a'>Undo</Button>
+                                          </div>
+                                          </Modal>
+                                      </form>   
+                                      
+                                      </Modal>
+                                  </Card>
+                                  
+                                  <Card 
+                                  header=''
+                                  className='white' 
+                                  textClassName='black-text' 
+                                  title='Iphone 7'>
+                                      <span>New York&nbsp;&nbsp;<strong>$300 - $800</strong>
+                                      <br/><br/>Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time
+                                      </span>
+                                      <br/><br/>
+                                      <Button className='light-blue darken-4' waves='light' node='a' href='#single'>View</Button>
+                                      &nbsp;&nbsp;&nbsp;
+                                      <Modal
+                                        header='Edit Product'
+                                        fixedFooter
+                                        trigger={<Button className='red darken-1'>Edit</Button>}>
+                                        
+                                         <form s={6} xs={6} onSubmit={this.handleSubmit}>  
+                                          <Row>
+                                          
+                                          <Input placeholder="" s={6} label="Title" />
+                                          
+                                          <Input placeholder="" s={6} label="Price ($)" />
+                                          
+                                          <Input placeholder="" s={6} label="Address" />
+                                          
+                                          <Input s={6} type='select' label="Location" defaultValue='1'>
+                                              <option value='1'>New York</option>
+                                              <option value='2'>Negative</option>
+                                          </Input>
+                                          
+                                          <Input s={12} type='select' label="Category" defaultValue='1'>
+                                            <option value='1'>Select some categories</option>
+                                            <option value='2'>Category 1</option>
+                                            <option value='3'>Category 2</option>
+                                          </Input>
+                                          
+                                          <Input type="textarea" name="description" s={12} label="Description" onChange={this.handleChange} />
+                                          
+                                          <Input name='sold' type='checkbox' value='sold' label='Mark as Sold' />
+                                          
+                                          </Row>  
+                                          
+                                          <Button className='light-blue darken-4' waves='light' type="submit">Save</Button>
+                                          &nbsp;&nbsp;&nbsp;
+                                          <Modal
+                                            header=''
+                                            trigger={<Button className='red darken-1'>Delete</Button>}>
+                                            <p>"iPhone 7" has been archived.</p><br/>
+                                            <div>
+                                              <Button className='red darken-1' waves='light' node='a'>Undo</Button>
+                                          </div>
+                                          </Modal>
+                                        </form>
+                                      </Modal>
+                                  </Card>
+                                  
                             </Tab>
-                            <Tab title="Seller Profile" active>
+                            <Tab title="Profile" active>
                             <br/>
                                 <form s={6} xs={6} onSubmit={this.handleSubmit}>  
                                 <Row>
@@ -105,25 +263,18 @@ class Account extends React.Component {
                                 <Button class="blue" waves='light' type="submit">Update Changes</Button>
                                 </form>
                             </Tab>
-                            <Tab title="Favorite Ads">
-                                <CardPanel className='white' textClassName='black-text'>
-                                    <span>No results found for your query.</span>
-                                </CardPanel>
-                            </Tab>
                             <Tab title="Sale Order">
                                 <Collection>
-                                  <CollectionItem href='#order-detail'>Order No. #4<br/><strong>PROCESSING</strong></CollectionItem>
-                                  <CollectionItem href='#order-detail'>Order No. #3<br/><strong>PROCESSING</strong></CollectionItem>
-                                  <CollectionItem href='#order-detail'>Order No. #2<br/><strong>ON HOLD</strong></CollectionItem>
-                                  <CollectionItem href='#order-detail'>Order No. #1<br/><strong>ON HOLD</strong></CollectionItem>
+                                  <CollectionItem href='#order-detail'>Order No. #3<br/></CollectionItem>
+                                  <CollectionItem href='#order-detail'>Order No. #2<br/></CollectionItem>
+                                  <CollectionItem href='#order-detail'>Order No. #1<br/></CollectionItem>
                                 </Collection>
                             </Tab>
                             <Tab title="Purchase Order">
                                 <Collection>
-                                  <CollectionItem href='#order-detail'>Order No. 5<br/><strong>ON HOLD</strong></CollectionItem>
-                                  <CollectionItem href='#order-detail'>Order No. 3<br/><strong>PROCESSING</strong></CollectionItem>
-                                  <CollectionItem href='#order-detail'>Order No. 2<br/><strong>ON HOLD</strong></CollectionItem>
-                                  <CollectionItem href='#order-detail'>Order No. 1<br/><strong>ON HOLD</strong></CollectionItem>
+                                  <CollectionItem href='#view-order'>Order No. #3<br/></CollectionItem>
+                                  <CollectionItem href='#view-order'>Order No. #2<br/></CollectionItem>
+                                  <CollectionItem href='#view-order'>Order No. #1<br/></CollectionItem>
                                 </Collection>
                             </Tab>
                             <Tab title="Transactions">
@@ -146,18 +297,13 @@ class Account extends React.Component {
                                       <tbody>
                                         <tr>
                                           <td>2018-03-07</td>
-                                          <td>1</td>
-                                          <td>Processing : $40.00</td>
+                                          <td>3</td>
+                                          <td>Processing : $800.00</td>
                                         </tr>
                                         <tr>
                                           <td>2017-12-20</td>
                                           <td>2</td>
                                           <td>Processing : $40.00</td>
-                                        </tr>
-                                        <tr>
-                                          <td>2017-10-05</td>
-                                          <td>2</td>
-                                          <td>On hold : $4.00</td>
                                         </tr>
                                       </tbody>
                                     </Table>

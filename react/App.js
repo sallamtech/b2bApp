@@ -16,7 +16,12 @@ import Footer from './pages/Footer';
 import UserRegister from './pages/Signup';
 import Account from './pages/Account';
 import Businesses from './pages/Businesses';
+import OrderDetail from './pages/OrderDetail';
+import ViewOrder from './pages/ViewOrder';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 
+import Following from './components/business/Following';
 import ProductBox from './components/product/ProductBox';
 import CategoryBox from './components/product-category/CategoryBox';
 import OrderBox from './components/order/OrderBox';
@@ -39,10 +44,15 @@ const App = () => (
           <Route path="/dashboard/categories" component={CategoryBox}/>
           <Route path="/dashboard/products" component={ProductBox}/>
           <Route path="/dashboard/orders" component={OrderBox}/>
+          <Route path="/dashboard/followers" component={Following}/>
           <Route path="/profile" component={Profile}/>
           <Route path="/single" component={Single}/>
           <Route path="/account" component={Account}/>
           <Route path="/businesses" component={Businesses}/>
+          <Route path="/order-detail" component={OrderDetail}/>
+          <Route path="/view-order" component={ViewOrder}/>
+          <Route path="/cart" component={Cart}/>
+          <Route path="/checkout" component={Checkout}/>
       </section>
     </div>
     

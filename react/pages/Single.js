@@ -61,9 +61,9 @@ class Single extends React.Component {
                                 <Modal
                           header='Post Review'
                           fixedFooter
-                          trigger={<Button className='light-blue darken-4'>Post Review</Button>}>
+                          trigger={<Button className='red darken-1'>Post Review</Button>}>
                           
-                           <form s={6} xs={6} onSubmit={this.handleSubmit}>  
+                           <form s={6} xs={6} onSubmit={this.handleSubmit}>
                             <Row>
                             
                             <Input s={12} type='select' label="" defaultValue='1'>
@@ -85,7 +85,7 @@ class Single extends React.Component {
                             </Row>  
                             
                             <Button class="blue" waves='light' type="submit">Post Review</Button>
-                        </form>   
+                        </form>
                         
                         
                         </Modal>
@@ -95,7 +95,7 @@ class Single extends React.Component {
                                 <Modal
                           header='Send a message'
                           fixedFooter
-                          trigger={<Button className='red darken-1'>Send this seller a message <Icon left>add_box</Icon></Button>}>
+                          trigger={<Button className='light-blue darken-4'>Send this seller a message <Icon left>add_box</Icon></Button>}>
                           
                            <form s={6} xs={6} onSubmit={this.handleSubmit}>  
                             <Row>
