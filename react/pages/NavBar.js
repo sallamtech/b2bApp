@@ -18,8 +18,9 @@ class NavBar extends React.Component {
         return (
             <div className="nav" id="main-nav">
               <Navbar className="blue-grey darken-4" brand='Logo' right>
-            	<NavItem href='#dashboard'><Icon>view_module</Icon></NavItem>
+            	<NavItem href='#cart'><Icon>shopping_cart</Icon></NavItem>
             	<NavItem href='#account'><Icon>account_circle</Icon></NavItem>
+            	<NavItem href='#dashboard'><Icon>dashboard</Icon></NavItem>
             </Navbar>
             </div>
         );

@@ -40,12 +40,18 @@ class Cart extends React.Component {
                               <td><Input defaultValue="1" min="0" s={2} type="number" /></td>
                               <td>$800.00</td>
                             </tr>
+                            <tr>
+                              <td><a href="#single">Charger</a></td>
+                              <td>$20.00</td>
+                              <td><Input defaultValue="2" min="0" s={2} type="number" /></td>
+                              <td>$40.00</td>
+                            </tr>
                           </tbody>
                         </Table>
                         
                         <hr/>
                         
-                        <Button className='blue' waves='light' node='a' href='#single'>Update cart</Button>
+                        <Button className='blue' waves='light'>Update cart</Button>
                         
                         </CardPanel>
                         <br/>
@@ -53,9 +59,9 @@ class Cart extends React.Component {
                         <Card 
                         className='white' textClassName='black-text' title='Cart totals'>
                             <span>
-                            <strong>Subtotal</strong>&nbsp;&nbsp;&nbsp;$800.00
+                            <strong>Subtotal</strong>&nbsp;&nbsp;&nbsp;$840.00
                             <br/><br/>
-                            <strong>Total</strong>&nbsp;&nbsp;&nbsp;$800.00
+                            <strong>Total</strong>&nbsp;&nbsp;&nbsp;$840.00
                             </span>
                             <hr/>
                             <Button className='red darken-1' waves='light' node='a' href='#checkout'>Proceed to checkout</Button>

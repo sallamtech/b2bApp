@@ -1,6 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Route, Link, Redirect } from 'react-router-dom';
-import {Tabs, Tab, Collapsible, CollapsibleItem, Icon, Input, Modal, Button, Card, CardTitle, Col, Row, CardPanel, Carousel, Slider, Slide, Autocomplete, Chip, Tag} from 'react-materialize';
+import {Collection, CollectionItem, Badge, Tabs, Tab, Collapsible, CollapsibleItem, Icon, Input, Modal, Button, Card, CardTitle, Col, Row, CardPanel, Carousel, Slider, Slide, Autocomplete, Chip, Tag} from 'react-materialize';
 import ProductBox from '../components/product/ProductBox';
 
 class Single extends React.Component {
@@ -33,10 +33,7 @@ class Single extends React.Component {
                             <Modal
                               header=''
                               trigger={<Button className='red darken-1'>Add to cart</Button>}>
-                              <p>"iPhone 7" has been added to your cart.</p><br/>
-                              <div>
-                                <Button className='red darken-1' waves='light' node='a' href='#cart'>View cart</Button>
-                            </div>
+                              <p>"iPhone 7" has been added to your cart.</p>
                             </Modal>
                             
                         </Card>
@@ -50,7 +47,22 @@ class Single extends React.Component {
                           <a href='#profile'><img src='http://materializecss.com/images/yuna.jpg' alt='Contact Person' />
                           Example Store</a>
                         </Chip>
+                        
                         <br/>
+                        
+                            <Collection>
+                            <Col s={12} m={6}>
+                              <CollectionItem href="#businesses">
+                                <Badge>999</Badge>Following
+                              </CollectionItem>
+                            </Col>
+                            <Col s={12} m={6}>
+                              <CollectionItem href="#businesses">
+                                <Badge>999</Badge>Followers
+                              </CollectionItem>
+                              </Col>
+                            </Collection>
+                        
                             <span><strong>New York</strong></span><br/>
                         	    <span>Joined on October 4, 2017</span><br/>
                         	    <hr/>

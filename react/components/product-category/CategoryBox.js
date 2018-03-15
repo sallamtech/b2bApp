@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Table, Button, Collection} from 'react-materialize';
+import {Table, Button, Collection, Row} from 'react-materialize';
 import CategoryCreateForm from './CategoryForm';
 import CategoryList from './CategoryList';
 import DashNav from '../../pages/DashboardNav';
@@ -80,14 +80,15 @@ class CategoryBox extends Component {
 }
 
   render() {
-    var divStyle = {
+   /* var divStyle = {
         margin: '0 25px 0 0',
           // width: '400px'
-        };
+        };*/
         
     
     return (
-      <div className="container right" style={divStyle}>
+      <Row>
+      <div className="col s12 col m10 right">
       
       <span className='left'>
        <CategoryCreateForm onCategorySubmit={ this.handleCategorySubmit }/>
@@ -100,6 +101,7 @@ class CategoryBox extends Component {
         </Collection>
         {/*</span>*/}
       </div>
+      </Row>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Tabs, Tab, Collapsible, CollapsibleItem, Icon, Input, Modal, Button, Card, CardTitle, Col, Row, CardPanel, Carousel, Slider, Slide, Autocomplete, Chip, Tag} from 'react-materialize';
-
+import {Card, Col, Row, Chip} from 'react-materialize';
+import InfiniteScroll from 'react-infinite-scroller';
     
 class Following extends Component { 
     
@@ -39,17 +39,19 @@ class Following extends Component {
   }
   
   render(){
-       var divStyle = {
+       /*var divStyle = {
         margin: '0 25px 0 0',
           // width: '400px'
-        };
+        };*/
       
       
     return (
-      <div className="container right" style={divStyle}>
+    <Row>
+      <div className="col s12 col m10 right">
         <input type="text" placeholder="Search" onChange={this.filterList}/>
       <List items={this.state.items}/>
       </div>
+      </Row>
     );
   }
   
@@ -96,13 +98,18 @@ class List extends Component {
         
         return (
             <Row>
-            
-            { businessNodes} 
+            <InfiniteScroll
+                pageStart={0}
+                //loadMore={loadFunc}
+                hasMore={true || false}
+                loader={<div className="loader">Loading ...</div>}
+            >
+                { businessNodes} 
+            </InfiniteScroll>
                 
             </Row>
         );
       
-  
   }
 }
 

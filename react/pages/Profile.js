@@ -15,11 +15,27 @@ class Profile extends React.Component {
                     <Col s={12} m={5}>
                     
                         <Card className='white' textClassName='black-text' title=''>
+                            <a href="#profile">
                             <Chip>
                               <img src='http://materializecss.com/images/yuna.jpg' alt='Contact Person' />
                               Example Store
                             </Chip>
+                            </a>
+                            
                             <br/>
+                            <Collection>
+                            <Col s={12} m={6}>
+                              <CollectionItem href="#businesses">
+                                <Badge>999</Badge>Following
+                              </CollectionItem>
+                            </Col>
+                            <Col s={12} m={6}>
+                              <CollectionItem href="#businesses">
+                                <Badge>999</Badge>Followers
+                              </CollectionItem>
+                              </Col>
+                            </Collection>
+                            
                             <span><strong>New York</strong></span><br/>
                         	    <span>Joined on October 4, 2017</span><br/>
                         	    <hr/>
@@ -81,10 +97,7 @@ class Profile extends React.Component {
                         <Modal
                               header=''
                               trigger={<Button className='red darken-1'>Add to cart</Button>}>
-                              <p>"iPhone 7" has been added to your cart.</p><br/>
-                              <div>
-                                <Button className='red darken-1' waves='light' node='a' href='#cart'>View cart</Button>
-                            </div>
+                              <p>"iPhone 7" has been added to your cart.</p>
                             </Modal>
                         
                         </Card>
@@ -99,10 +112,7 @@ class Profile extends React.Component {
                         <Modal
                               header=''
                               trigger={<Button className='red darken-1'>Add to cart</Button>}>
-                              <p>"iPhone 7" has been added to your cart.</p><br/>
-                              <div>
-                                <Button className='red darken-1' waves='light' node='a' href='#cart'>View cart</Button>
-                            </div>
+                              <p>"iPhone 7" has been added to your cart.</p>
                             </Modal>
                         
                         </Card>
@@ -117,10 +127,7 @@ class Profile extends React.Component {
                         <Modal
                               header=''
                               trigger={<Button className='red darken-1'>Add to cart</Button>}>
-                              <p>"iPhone 7" has been added to your cart.</p><br/>
-                              <div>
-                                <Button className='red darken-1' waves='light' node='a' href='#cart'>View cart</Button>
-                            </div>
+                              <p>"iPhone 7" has been added to your cart.</p>
                             </Modal>
                         
                         </Card>

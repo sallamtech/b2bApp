@@ -47,8 +47,8 @@ class Businesses extends React.Component {
                               Example Store</a>
                             </Chip>
                             <br/>
-                            <span><strong>New York</strong></span><br/>
-                                <span>Joined on October 4, 2017</span><br/>
+                            <span><strong>New York, USA</strong></span><br/>
+                                <span>Chain retailer with a large array of brand-name electronics, computers, appliances & more.</span><br/>
                         </Card>
                         
                     </Col>
@@ -61,8 +61,8 @@ class Businesses extends React.Component {
                               Example Store</a>
                             </Chip>
                             <br/>
-                            <span><strong>New York</strong></span><br/>
-                                <span>Joined on October 4, 2017</span><br/>
+                            <span><strong>New York, USA</strong></span><br/>
+                                <span>Chain retailer with a large array of brand-name electronics, computers, appliances & more.</span><br/>
                         </Card>
                         
                     </Col>
@@ -75,8 +75,8 @@ class Businesses extends React.Component {
                               Example Store</a>
                             </Chip>
                             <br/>
-                            <span><strong>New York</strong></span><br/>
-                                <span>Joined on October 4, 2017</span><br/>
+                            <span><strong>New York, USA</strong></span><br/>
+                                <span>Chain retailer with a large array of brand-name electronics, computers, appliances & more.</span><br/>
                         </Card>
                         
                     </Col>
@@ -89,8 +89,8 @@ class Businesses extends React.Component {
                               Example Store</a>
                             </Chip>
                             <br/>
-                            <span><strong>New York</strong></span><br/>
-                                <span>Joined on October 4, 2017</span><br/>
+                            <span><strong>New York, USA</strong></span><br/>
+                                <span>Chain retailer with a large array of brand-name electronics, computers, appliances & more.</span><br/>
                         </Card>
                         
                     </Col>
@@ -103,8 +103,8 @@ class Businesses extends React.Component {
                               Example Store</a>
                             </Chip>
                             <br/>
-                            <span><strong>New York</strong></span><br/>
-                                <span>Joined on October 4, 2017</span><br/>
+                            <span><strong>New York, USA</strong></span><br/>
+                                <span>Chain retailer with a large array of brand-name electronics, computers, appliances & more.</span><br/>
                         </Card>
                         
                     </Col>

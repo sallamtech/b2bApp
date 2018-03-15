@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Table, Button} from 'react-materialize';
+import {Row, Tabs, Tab} from 'react-materialize';
 import ProductCreateForm from './ProductForm';
 import ProductTable from './ProductTable';
 
-// Import React Table
-import ReactTable from "react-table";
-import matchSorter from 'match-sorter';
 
 class ProductBox extends Component {
   constructor(props) {
@@ -93,24 +90,34 @@ class ProductBox extends Component {
 }
 
   render() {
-    var divStyle = {
-        margin: '0 25px 0 0',
-          // width: '400px'
-        };
-        
     
     return (
-      <div className="container right" style={divStyle}>
-      <h4 class=''>Product Page</h4>
-      <span className='left'>
-       <ProductCreateForm onProductSubmit={ this.handleProductSubmit }/>
-       </span>
-       <br/>
-       <br/>
+      <Row>
+      <div className="col s12 col m10 right">
+       <Tabs className='tab-demo z-depth-1 text-blue'>
+          <Tab title="All Products" active>
+          <span className='right'>
+          <ProductCreateForm onProductSubmit={ this.handleProductSubmit }/>
+          </span>
+          <p><b>All Products</b></p>
+          <ProductTable data={this.state.data}/>
+          
+          </Tab>
+          <Tab title="Others">
+         <span className='right'>
+          <ProductCreateForm onProductSubmit={ this.handleProductSubmit }/>
+          </span>
+          <p><b>Others</b></p>
+          
+          <p>Place holder for other things.</p>
+          
+          </Tab>
+      </Tabs>
        
-       <ProductTable data={this.state.data}/>
+       
 
       </div>
+      </Row>
     );
   }
 }

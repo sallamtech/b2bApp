@@ -20,6 +20,7 @@ import OrderDetail from './pages/OrderDetail';
 import ViewOrder from './pages/ViewOrder';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import OrderReceived from './pages/OrderReceived';
 
 import Following from './components/business/Following';
 import ProductBox from './components/product/ProductBox';
@@ -53,6 +54,7 @@ const App = () => (
           <Route path="/view-order" component={ViewOrder}/>
           <Route path="/cart" component={Cart}/>
           <Route path="/checkout" component={Checkout}/>
+          <Route path="/order-received" component={OrderReceived}/>
       </section>
     </div>
     

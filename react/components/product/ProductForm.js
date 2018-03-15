@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Icon, Row, Input, Modal, Button} from 'react-materialize';
+import Dropzone from 'react-dropzone';
 
 
 class ProductCreateForm extends Component {
@@ -7,7 +8,7 @@ class ProductCreateForm extends Component {
       constructor(props) {
         super(props);
         
-        this.file = null;
+        //this.file = null;
         
         this.state = { 
                 productName: '',
@@ -16,11 +17,19 @@ class ProductCreateForm extends Component {
                 productMaxPrice: '',
                 productDescription: '',
                 productDisplayStatus: '',
+                files: []
             };
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
+      
+      onDrop(files) {
+        this.setState({
+          files
+        });
+      }
+      
     
       handleChange(event) {
         const target = event.target;
@@ -77,6 +86,13 @@ class ProductCreateForm extends Component {
       }
       
   render() {
+    
+    const dropzoneStyle = {
+      width: '100%',
+      height: '160px',
+      border: '2px dotted DodgerBlue',
+    };
+
        
       
     return (
@@ -103,9 +119,27 @@ class ProductCreateForm extends Component {
                 	</Input>
                 	<Input type="textarea" name="productDescription" s={12} label="Product Description" onChange={this.handleChange} />
                 	
-                	<Input name="file" type="file"  onChange={this.handleFileChange} multiple />
-                	
-                </Row>	
+                </Row>
+                
+                <section>
+                  <div className="dropzone white" >
+                    <Dropzone onDrop={this.onDrop.bind(this)} style={dropzoneStyle}>
+                    <br/>
+                    <br/>
+                    <br/>
+                      <h6 className="center grey-text text-darken-3">Drop files here, or click to upload.</h6>
+                    </Dropzone>
+                  </div>
+                  <aside>
+                    <h4>Dropped files</h4>
+                    <ul>
+                      {
+                        this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
+                      }
+                    </ul>
+                  </aside>
+                </section>
+                
                 
                 <Button class="blue" waves='light' type="submit">submit<Icon right>send</Icon></Button>
             </form>		
