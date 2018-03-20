@@ -18,36 +18,14 @@ class NavBar extends React.Component {
     
         return (
             <div>
-            <div className="nav" id="main-nav">
-            
-             <nav class="nav-extended blue-grey darken-4">
-                <div class="nav-wrapper">
-                 <a href="#!" class="brand-logo">Sallam Tec Group</a>
-                  
-                  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                  <ul class="right hide-on-med-and-down">
-                    <NavItem href='#'><Icon>home</Icon></NavItem>
-                	<NavItem href='#dashboard'><Icon>dashboard</Icon></NavItem>
-                	<NavItem href='#post'><Icon>create</Icon></NavItem>
-                	<NavItem href='#cart'><Icon>shopping_cart</Icon></NavItem>
-                	<NavItem href='#account'><Icon>account_circle</Icon></NavItem>
-                	<NavItem href='#sign-in'><Icon>power_settings_new</Icon></NavItem>
-                  </ul>
-                  
-                  <ul class="side-nav" id="mobile-demo">
-                    <NavItem href='#'><Icon>home</Icon></NavItem>
-                	<NavItem href='#dashboard'><Icon>dashboard</Icon></NavItem>
-                	<NavItem href='#post'><Icon>create</Icon></NavItem>
-                	<NavItem href='#cart'><Icon>shopping_cart</Icon></NavItem>
-                	<NavItem href='#account'><Icon>account_circle</Icon></NavItem>
-                	<NavItem href='#sign-in'><Icon>power_settings_new</Icon></NavItem>
-                  </ul>
-                </div>
-                
-            </nav>
-            
-            </div>
-          
+            <Navbar className="blue-grey darken-4" brand='Sallam Tec Group' right>
+            	<NavItem href='#'><Icon>home</Icon></NavItem>
+            	<NavItem href='#dashboard'><Icon>dashboard</Icon></NavItem>
+            	<NavItem href='#post'><Icon>create</Icon></NavItem>
+            	<NavItem href='#cart'><Icon>shopping_cart</Icon></NavItem>
+            	<NavItem href='#account'><Icon>account_circle</Icon></NavItem>
+            	<NavItem href='#sign-in'><Icon>power_settings_new</Icon></NavItem>
+            </Navbar>
             
             <SearchForm/>
             </div>

@@ -35481,144 +35481,60 @@
 	                'div',
 	                null,
 	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'nav', id: 'main-nav' },
+	                    _reactMaterialize.Navbar,
+	                    { className: 'blue-grey darken-4', brand: 'Sallam Tec Group', right: true },
 	                    _react2.default.createElement(
-	                        'nav',
-	                        { className: 'nav-extended blue-grey darken-4' },
+	                        _reactMaterialize.NavItem,
+	                        { href: '#' },
 	                        _react2.default.createElement(
-	                            'div',
-	                            { className: 'nav-wrapper' },
-	                            _react2.default.createElement(
-	                                'a',
-	                                { href: '#!', className: 'brand-logo' },
-	                                'Sallam Tec Group'
-	                            ),
-	                            _react2.default.createElement(
-	                                'a',
-	                                { href: '#', 'data-activates': 'mobile-demo', className: 'button-collapse' },
-	                                _react2.default.createElement(
-	                                    'i',
-	                                    { className: 'material-icons' },
-	                                    'menu'
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                'ul',
-	                                { className: 'right hide-on-med-and-down' },
-	                                _react2.default.createElement(
-	                                    _reactMaterialize.NavItem,
-	                                    { href: '#' },
-	                                    _react2.default.createElement(
-	                                        _reactMaterialize.Icon,
-	                                        null,
-	                                        'home'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    _reactMaterialize.NavItem,
-	                                    { href: '#dashboard' },
-	                                    _react2.default.createElement(
-	                                        _reactMaterialize.Icon,
-	                                        null,
-	                                        'dashboard'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    _reactMaterialize.NavItem,
-	                                    { href: '#post' },
-	                                    _react2.default.createElement(
-	                                        _reactMaterialize.Icon,
-	                                        null,
-	                                        'create'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    _reactMaterialize.NavItem,
-	                                    { href: '#cart' },
-	                                    _react2.default.createElement(
-	                                        _reactMaterialize.Icon,
-	                                        null,
-	                                        'shopping_cart'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    _reactMaterialize.NavItem,
-	                                    { href: '#account' },
-	                                    _react2.default.createElement(
-	                                        _reactMaterialize.Icon,
-	                                        null,
-	                                        'account_circle'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    _reactMaterialize.NavItem,
-	                                    { href: '#sign-in' },
-	                                    _react2.default.createElement(
-	                                        _reactMaterialize.Icon,
-	                                        null,
-	                                        'power_settings_new'
-	                                    )
-	                                )
-	                            ),
-	                            _react2.default.createElement(
-	                                'ul',
-	                                { className: 'side-nav', id: 'mobile-demo' },
-	                                _react2.default.createElement(
-	                                    _reactMaterialize.NavItem,
-	                                    { href: '#' },
-	                                    _react2.default.createElement(
-	                                        _reactMaterialize.Icon,
-	                                        null,
-	                                        'home'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    _reactMaterialize.NavItem,
-	                                    { href: '#dashboard' },
-	                                    _react2.default.createElement(
-	                                        _reactMaterialize.Icon,
-	                                        null,
-	                                        'dashboard'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    _reactMaterialize.NavItem,
-	                                    { href: '#post' },
-	                                    _react2.default.createElement(
-	                                        _reactMaterialize.Icon,
-	                                        null,
-	                                        'create'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    _reactMaterialize.NavItem,
-	                                    { href: '#cart' },
-	                                    _react2.default.createElement(
-	                                        _reactMaterialize.Icon,
-	                                        null,
-	                                        'shopping_cart'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    _reactMaterialize.NavItem,
-	                                    { href: '#account' },
-	                                    _react2.default.createElement(
-	                                        _reactMaterialize.Icon,
-	                                        null,
-	                                        'account_circle'
-	                                    )
-	                                ),
-	                                _react2.default.createElement(
-	                                    _reactMaterialize.NavItem,
-	                                    { href: '#sign-in' },
-	                                    _react2.default.createElement(
-	                                        _reactMaterialize.Icon,
-	                                        null,
-	                                        'power_settings_new'
-	                                    )
-	                                )
-	                            )
+	                            _reactMaterialize.Icon,
+	                            null,
+	                            'home'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactMaterialize.NavItem,
+	                        { href: '#dashboard' },
+	                        _react2.default.createElement(
+	                            _reactMaterialize.Icon,
+	                            null,
+	                            'dashboard'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactMaterialize.NavItem,
+	                        { href: '#post' },
+	                        _react2.default.createElement(
+	                            _reactMaterialize.Icon,
+	                            null,
+	                            'create'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactMaterialize.NavItem,
+	                        { href: '#cart' },
+	                        _react2.default.createElement(
+	                            _reactMaterialize.Icon,
+	                            null,
+	                            'shopping_cart'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactMaterialize.NavItem,
+	                        { href: '#account' },
+	                        _react2.default.createElement(
+	                            _reactMaterialize.Icon,
+	                            null,
+	                            'account_circle'
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactMaterialize.NavItem,
+	                        { href: '#sign-in' },
+	                        _react2.default.createElement(
+	                            _reactMaterialize.Icon,
+	                            null,
+	                            'power_settings_new'
 	                        )
 	                    )
 	                ),
