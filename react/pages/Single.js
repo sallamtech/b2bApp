@@ -64,18 +64,18 @@ class Single extends React.Component {
                             </Collection>
                         
                             <span><strong>New York</strong></span><br/>
-                        	    <span>Joined on October 4, 2017</span><br/>
-                        	    <hr/>
-                        	    <span><strong>Phone Number: </strong><br/>555-555-5555</span><br/><br/>
-                        	    <span><strong>Address: </strong><br/>123 Street Address, New York, NY 12345</span>
-                        	    
-                        	    <br/><br/>
+                              <span>Joined on October 4, 2017</span><br/>
+                              <hr/>
+                              <span><strong>Phone Number: </strong><br/>555-555-5555</span><br/><br/>
+                              <span><strong>Address: </strong><br/>123 Street Address, New York, NY 12345</span>
+                              
+                              <br/><br/>
                                 <Modal
                           header='Post Review'
                           fixedFooter
                           trigger={<Button className='red darken-1'>Post Review</Button>}>
                           
-                           <form s={6} xs={6} onSubmit={this.handleSubmit}>
+                           
                             <Row>
                             
                             <Input s={12} type='select' label="" defaultValue='1'>
@@ -97,19 +97,19 @@ class Single extends React.Component {
                             </Row>  
                             
                             <Button class="blue" waves='light' type="submit">Post Review</Button>
-                        </form>
+                        
                         
                         
                         </Modal>
-                        	    <br/><br/>
-                        	    <hr/>
-                        	    <br/>
+                              <br/><br/>
+                              <hr/>
+                              <br/>
                                 <Modal
                           header='Send a message'
                           fixedFooter
                           trigger={<Button className='light-blue darken-4'>Send this seller a message <Icon left>add_box</Icon></Button>}>
                           
-                           <form s={6} xs={6} onSubmit={this.handleSubmit}>  
+                           
                             <Row>
                               <Input type="text" name="firstName" placeholder="First name" s={6} label="First name" onChange={this.handleChange}/>
                               <Input type="text" name="lastName" placeholder="Last name" s={6} label="Last name" onChange={this.handleChange}/>
@@ -121,7 +121,7 @@ class Single extends React.Component {
                             </Row>  
                             
                             <Button class="blue" waves='light' type="submit">Send Message<Icon right>send</Icon></Button>
-                        </form>   
+                        
                         
                         
                         </Modal>

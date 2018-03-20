@@ -1,6 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Route, Link, Redirect } from 'react-router-dom';
-import {NavItem, Navbar, Icon} from 'react-materialize';
+import {Badge, NavItem, Navbar, Icon, Input, Button, Col, Row, CardPanel} from 'react-materialize';
+import SearchForm from '../components/home/SearchForm';
 
 class NavBar extends React.Component {
     
@@ -16,12 +17,39 @@ class NavBar extends React.Component {
     render() {
     
         return (
+            <div>
             <div className="nav" id="main-nav">
-              <Navbar className="blue-grey darken-4" brand='Logo' right>
-            	<NavItem href='#cart'><Icon>shopping_cart</Icon></NavItem>
-            	<NavItem href='#account'><Icon>account_circle</Icon></NavItem>
-            	<NavItem href='#dashboard'><Icon>dashboard</Icon></NavItem>
-            </Navbar>
+            
+             <nav class="nav-extended blue-grey darken-4">
+                <div class="nav-wrapper">
+                 <a href="#!" class="brand-logo">Sallam Tec Group</a>
+                  
+                  <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                  <ul class="right hide-on-med-and-down">
+                    <NavItem href='#'><Icon>home</Icon></NavItem>
+                	<NavItem href='#dashboard'><Icon>dashboard</Icon></NavItem>
+                	<NavItem href='#post'><Icon>create</Icon></NavItem>
+                	<NavItem href='#cart'><Icon>shopping_cart</Icon></NavItem>
+                	<NavItem href='#account'><Icon>account_circle</Icon></NavItem>
+                	<NavItem href='#sign-in'><Icon>power_settings_new</Icon></NavItem>
+                  </ul>
+                  
+                  <ul class="side-nav" id="mobile-demo">
+                    <NavItem href='#'><Icon>home</Icon></NavItem>
+                	<NavItem href='#dashboard'><Icon>dashboard</Icon></NavItem>
+                	<NavItem href='#post'><Icon>create</Icon></NavItem>
+                	<NavItem href='#cart'><Icon>shopping_cart</Icon></NavItem>
+                	<NavItem href='#account'><Icon>account_circle</Icon></NavItem>
+                	<NavItem href='#sign-in'><Icon>power_settings_new</Icon></NavItem>
+                  </ul>
+                </div>
+                
+            </nav>
+            
+            </div>
+          
+            
+            <SearchForm/>
             </div>
         );
     }

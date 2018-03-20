@@ -21,6 +21,10 @@ import ViewOrder from './pages/ViewOrder';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import OrderReceived from './pages/OrderReceived';
+import Post from './pages/Post';
+import Register from './pages/Register';
+import SignIn from './pages/SignIn';
+import EditProfile from './pages/EditProfile';
 
 import Following from './components/business/Following';
 import ProductBox from './components/product/ProductBox';
@@ -55,6 +59,10 @@ const App = () => (
           <Route path="/cart" component={Cart}/>
           <Route path="/checkout" component={Checkout}/>
           <Route path="/order-received" component={OrderReceived}/>
+          <Route path="/post" component={Post}/>
+          <Route path="/register" component={Register}/>
+          <Route path="/sign-in" component={SignIn}/>
+          <Route path="/edit-profile" component={EditProfile}/>
       </section>
     </div>
     

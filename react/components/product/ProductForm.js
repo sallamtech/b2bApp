@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Icon, Row, Input, Modal, Button} from 'react-materialize';
 import Dropzone from 'react-dropzone';
-
+import axios from 'axios';
 
 class ProductCreateForm extends Component {
     
@@ -52,13 +52,12 @@ class ProductCreateForm extends Component {
       handleSubmit(e) {
         e.preventDefault();
         
-        
             let productName = this.state.productName.trim();
             let productCategory = this.state.productCategory.trim();
             let productMinPrice = this.state.productMinPrice.trim();
             let productDescription = this.state.productDescription.trim();
             let productDisplayStatus = this.state.productDisplayStatus.trim();
-            let productImages = this.state.productImages.trim();
+            //let productImages = this.state.files;
         
     
         if (!productName || !productDescription) {
@@ -71,7 +70,7 @@ class ProductCreateForm extends Component {
             productMinPrice: productMinPrice,
             productDescription: productDescription,
             productDisplayStatus: productDisplayStatus,
-            productImages: productImages,
+            productImages: this.state.files,
             
         });
         
@@ -85,6 +84,39 @@ class ProductCreateForm extends Component {
             });
       }
       
+      
+      /*async handleSubmit(e) {
+          event.preventDefault();
+      
+          try {
+            
+              let productName = this.state.productName.trim();
+              let productCategory = this.state.productCategory.trim();
+              let productMinPrice = this.state.productMinPrice.trim();
+              let productDescription = this.state.productDescription.trim();
+              let productDisplayStatus = this.state.productDisplayStatus.trim();
+      
+            await this.createProduct({
+              productName: productName,
+              productCategory: productCategory, 
+              productMinPrice: productMinPrice,
+              productDescription: productDescription,
+              productDisplayStatus: productDisplayStatus,
+              productImages: this.state.files,
+            });
+            this.props.history.push("/");
+          } catch (e) {
+            alert(e);
+          }
+        }*/
+      
+      
+      createProduct(product) {
+        return axios.post("products", "url", {
+          body: product
+        });
+      }
+      
   render() {
     
     const dropzoneStyle = {
@@ -93,8 +125,6 @@ class ProductCreateForm extends Component {
       border: '2px dotted DodgerBlue',
     };
 
-       
-      
     return (
          <div className="Product">
          
@@ -127,11 +157,11 @@ class ProductCreateForm extends Component {
                     <br/>
                     <br/>
                     <br/>
-                      <h6 className="center grey-text text-darken-3">Drop files here, or click to upload.</h6>
+                      <h6 className="center grey-text text-darken-3">Drop images here, or click to upload.</h6>
                     </Dropzone>
                   </div>
                   <aside>
-                    <h4>Dropped files</h4>
+                    <h5>Dropped files</h5>
                     <ul>
                       {
                         this.state.files.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
