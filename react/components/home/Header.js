@@ -19,10 +19,10 @@ class Header extends React.Component {
        <Col s={12} m={12}>
                          
           <div class="section no-pad-bot blue-grey lighten-5" id="index-banner">
-          <div class="container">
+          <div class="container hide-on-small-only">
            <Slider>
                 <Slide
-                  src="https://media.giphy.com/media/hFo0u8MMC38Q0/giphy.gif"
+                  src="https://image.freepik.com/free-photo/blue-sky-with-clouds_1112-454.jpg"
                   title="This is our big Tagline!">
                   Here's our small slogan.
                 </Slide>

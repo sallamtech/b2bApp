@@ -27,7 +27,7 @@ class NavBar extends React.Component {
             	<NavItem href='#sign-in'><Icon>power_settings_new</Icon></NavItem>
             </Navbar>
             
-            <SearchForm/>
+            
             </div>
         );
     }

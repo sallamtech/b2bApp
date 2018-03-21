@@ -2,13 +2,11 @@ import React from 'react';
 import { HashRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import {Collection, CollectionItem, Badge, Tabs, Tab, Collapsible, CollapsibleItem, Icon, Input, Modal, Button, Card, CardTitle, Col, Row, CardPanel, Carousel, Slider, Slide, Autocomplete, Chip, Tag} from 'react-materialize';
 import HomeProducts from "../components/home/HomeProducts";
-import ActiveProducts from "../components/home/ActiveProducts";
 import Header from "../components/home/Header";
-import SearchForm from '../components/home/SearchForm';
-import HomeTabs from '../components/home/HomeTabs';
 
 
-class HomePage extends React.Component {
+
+class ActiveProducts extends React.Component {
 
   
 
@@ -18,11 +16,8 @@ class HomePage extends React.Component {
             <div className="page">
                 <Row>
                     
-                  <SearchForm/>
-                  
+                    
                   <Header/>
-                  
-                  <HomeTabs/>
                    
                     
                     <Col s={12} m={12}>
@@ -31,7 +26,7 @@ class HomePage extends React.Component {
                             <h5>3 Active Products</h5>
                         </CardPanel>
                         
-                        <ActiveProducts/>
+                        <HomeProducts/>
                         
                     </Col>
                     
@@ -46,4 +41,4 @@ class HomePage extends React.Component {
     }
 } 
 
-export default HomePage;
+export default ActiveProducts;

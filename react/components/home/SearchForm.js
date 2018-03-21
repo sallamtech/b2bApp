@@ -19,21 +19,28 @@ class SearchForm extends React.Component {
             <div className='container'>
             <Col s={12} m={12}>
                         
-                <Row>
-                  <form>
-                  <Input s={1} type='select' defaultValue='all-categories'>
-                    <option value='all-categories'>All</option>
-                    <option value='1'>Computer</option>
-                    <option value='2'>Phone</option>
-                    <option value='3'>Book</option>
-                    <option value='4'>Fasion</option>
-                  </Input>
-                  
-                  <Input s={10} placeholder='Search ...' validate></Input>
-                  <br/>
+            <div class="row hide-on-small-only">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s2">
+                     <select class="browser-default">
+                        <option value="" disabled selected>All</option>
+                        <option value='1'>Computer</option>
+                        <option value='2'>Phone</option>
+                        <option value='3'>Book</option>
+                        <option value='4'>Fasion</option>
+                      </select>
+                    </div>
+                    <div class="input-field col s9">
+                      <input id="last_name" type="text" class="validate" placeholder='Search ...' />
+                    </div>
+                    
+                     <br/>
                   <Button className='light-blue darken-4 col s1' s={1} waves='light'><Icon>search</Icon></Button>
-                  </form>
-                </Row>
+                    
+                  </div>
+                </form>
+              </div>
     
                 </Col>
             </div>
