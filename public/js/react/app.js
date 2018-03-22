@@ -24706,6 +24706,10 @@
 
 	var _HomeTabs2 = _interopRequireDefault(_HomeTabs);
 
+	var _Home = __webpack_require__(550);
+
+	var _Home2 = _interopRequireDefault(_Home);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24736,18 +24740,10 @@
 	                    _react2.default.createElement(_SearchForm2.default, null),
 	                    _react2.default.createElement(_Header2.default, null),
 	                    _react2.default.createElement(_HomeTabs2.default, null),
+	                    _react2.default.createElement(_Home2.default, null),
 	                    _react2.default.createElement(
 	                        _reactMaterialize.Col,
 	                        { s: 12, m: 12 },
-	                        _react2.default.createElement(
-	                            _reactMaterialize.CardPanel,
-	                            { className: 'white', textClassName: 'black-text' },
-	                            _react2.default.createElement(
-	                                'h5',
-	                                null,
-	                                '3 Active Products'
-	                            )
-	                        ),
 	                        _react2.default.createElement(_ActiveProducts2.default, null)
 	                    )
 	                )
@@ -36000,10 +35996,6 @@
 
 	var _ProductBox2 = _interopRequireDefault(_ProductBox);
 
-	var _ActiveProducts = __webpack_require__(487);
-
-	var _ActiveProducts2 = _interopRequireDefault(_ActiveProducts);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -36307,19 +36299,6 @@
 	                                    null,
 	                                    '"iPhone 7" has been added to your cart.'
 	                                )
-	                            )
-	                        )
-	                    ),
-	                    _react2.default.createElement(
-	                        _reactMaterialize.Col,
-	                        { s: 12, m: 12 },
-	                        _react2.default.createElement(
-	                            _reactMaterialize.CardPanel,
-	                            { className: 'white', textClassName: 'black-text' },
-	                            _react2.default.createElement(
-	                                'h5',
-	                                null,
-	                                '3 Active Products'
 	                            )
 	                        )
 	                    )
@@ -63915,21 +63894,17 @@
 	    key: 'render',
 	    value: function render() {
 
-	      var filterData = [{ name: 'Iphone 7', status: 'Featured', category: 'Phone', location: 'New York' }, { name: 'Chromebook', status: 'Featured', category: 'Laptop', location: 'California' }, { name: 'Galexy S9', status: 'Featured', category: 'Phone', location: 'New York' }];
+	      var filterData = [{ name: 'Iphone 7', category: 'Phone', location: 'New York', description: 'Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time' }, { name: 'Samsung Chromebook', category: 'Laptop', location: 'California', description: 'Just what you need, exactly what you want Samsungs Chromebook provides the perfect balance to computing and mobility.' }, { name: 'Apple iMac', category: 'Computer', location: 'Buffalo', description: 'A desktop experience that draws you in and keeps you there: this is the idea behind iMac. And now that idea is more powerful.' }];
 	      var FilterForm = (0, _createReactClass2.default)({
 	        getInitialState: function getInitialState() {
 	          return {
 	            data: this.props.data,
-	            status: 'Featured',
 	            category: '',
 	            location: ''
 	          };
 	        },
 	        filterItems: function filterItems(val, type) {
 	          switch (type) {
-	            case 'status':
-	              this.setState({ status: val });
-	              break;
 	            case 'category':
 	              this.setState({ category: val });
 	              break;
@@ -63943,7 +63918,7 @@
 	        render: function render() {
 	          var filteredItems = this.props.data;
 	          var state = this.state;
-	          ["status", "category", "location"].forEach(function (filterBy) {
+	          ["category", "location"].forEach(function (filterBy) {
 	            var filterValue = state[filterBy];
 	            if (filterValue) {
 	              filteredItems = filteredItems.filter(function (item) {
@@ -63951,16 +63926,12 @@
 	              });
 	            }
 	          });
-	          var statusArray = this.props.data.map(function (item) {
-	            return item.status;
-	          });
 	          var categoryArray = this.props.data.map(function (item) {
 	            return item.category;
 	          });
 	          var locationArray = this.props.data.map(function (item) {
 	            return item.location;
 	          });
-	          statusArray.unshift("");
 	          categoryArray.unshift("");
 	          locationArray.unshift("");
 	          return _react2.default.createElement(
@@ -63968,7 +63939,6 @@
 	            null,
 	            _react2.default.createElement(FilterOptions, {
 	              data: this.state.data,
-	              statusOptions: statusArray,
 	              categoryOptions: categoryArray,
 	              locationOptions: locationArray,
 	              changeOption: this.filterItems }),
@@ -64000,19 +63970,14 @@
 	                  _reactMaterialize.Row,
 	                  null,
 	                  _react2.default.createElement(
-	                    _reactMaterialize.Input,
-	                    { label: 'Browse Products', s: 4, type: 'select', defaultValue: 'Featured', id: 'status', value: this.props.status, onChange: this.changeOption.bind(this, 'status') },
-	                    this.props.statusOptions.map(function (option) {
-	                      return _react2.default.createElement(
-	                        'option',
-	                        { key: option, value: option },
-	                        option
-	                      );
-	                    })
+	                    'h5',
+	                    null,
+	                    'Latest Products'
 	                  ),
+	                  _react2.default.createElement('br', null),
 	                  _react2.default.createElement(
 	                    _reactMaterialize.Input,
-	                    { s: 4, type: 'select', id: 'category', label: 'Browse Categories', value: this.props.category, onChange: this.changeOption.bind(this, 'category') },
+	                    { s: 6, type: 'select', id: 'category', label: 'BROWSE BY CATEGORY', value: this.props.category, onChange: this.changeOption.bind(this, 'category') },
 	                    this.props.categoryOptions.map(function (option) {
 	                      return _react2.default.createElement(
 	                        'option',
@@ -64023,7 +63988,7 @@
 	                  ),
 	                  _react2.default.createElement(
 	                    _reactMaterialize.Input,
-	                    { s: 4, type: 'select', id: 'location', label: 'Browse Locations', value: this.props.location, onChange: this.changeOption.bind(this, 'location') },
+	                    { s: 6, type: 'select', id: 'location', label: 'BROWSE BY LOCATION', value: this.props.location, onChange: this.changeOption.bind(this, 'location') },
 	                    this.props.locationOptions.map(function (option) {
 	                      return _react2.default.createElement(
 	                        'option',
@@ -64037,6 +64002,7 @@
 	            )
 	          );
 	        }
+
 	      });
 	      var FilterItems = (0, _createReactClass2.default)({
 	        render: function render() {
@@ -64058,7 +64024,13 @@
 	                    _react2.default.createElement(
 	                      'span',
 	                      null,
-	                      'New York\xA0\xA0',
+	                      item.location
+	                    ),
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement('br', null),
+	                    _react2.default.createElement(
+	                      'span',
+	                      null,
 	                      _react2.default.createElement(
 	                        'strong',
 	                        null,
@@ -64066,7 +64038,7 @@
 	                      ),
 	                      _react2.default.createElement('br', null),
 	                      _react2.default.createElement('br', null),
-	                      'Apple \xB7 iPhone \xB7 iPhone 7 \xB7 iPhone 7 (Original) \xB7 iOS \xB7 4.7 in \xB7 Fingerprint Scanner \xB7 Rear Camera: 12 MP \xB7 4G LTE \xB7 14 hours talk time'
+	                      item.description
 	                    ),
 	                    _react2.default.createElement('br', null),
 	                    _react2.default.createElement('br', null),
@@ -65287,6 +65259,281 @@
 	module.exports = factory;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ }),
+/* 491 */,
+/* 492 */,
+/* 493 */,
+/* 494 */,
+/* 495 */,
+/* 496 */,
+/* 497 */,
+/* 498 */,
+/* 499 */,
+/* 500 */,
+/* 501 */,
+/* 502 */,
+/* 503 */,
+/* 504 */,
+/* 505 */,
+/* 506 */,
+/* 507 */,
+/* 508 */,
+/* 509 */,
+/* 510 */,
+/* 511 */,
+/* 512 */,
+/* 513 */,
+/* 514 */,
+/* 515 */,
+/* 516 */,
+/* 517 */,
+/* 518 */,
+/* 519 */,
+/* 520 */,
+/* 521 */,
+/* 522 */,
+/* 523 */,
+/* 524 */,
+/* 525 */,
+/* 526 */,
+/* 527 */,
+/* 528 */,
+/* 529 */,
+/* 530 */,
+/* 531 */,
+/* 532 */,
+/* 533 */,
+/* 534 */,
+/* 535 */,
+/* 536 */,
+/* 537 */,
+/* 538 */,
+/* 539 */,
+/* 540 */,
+/* 541 */,
+/* 542 */,
+/* 543 */,
+/* 544 */,
+/* 545 */,
+/* 546 */,
+/* 547 */,
+/* 548 */,
+/* 549 */,
+/* 550 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _axios = __webpack_require__(155);
+
+	var _axios2 = _interopRequireDefault(_axios);
+
+	var _reactMaterialize = __webpack_require__(104);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Home = function (_React$Component) {
+	  _inherits(Home, _React$Component);
+
+	  function Home(props) {
+	    _classCallCheck(this, Home);
+
+	    var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+
+	    _this.state = { value: 'coconut' };
+
+	    _this.handleChange = _this.handleChange.bind(_this);
+	    _this.handleSubmit = _this.handleSubmit.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(Home, [{
+	    key: 'handleChange',
+	    value: function handleChange(event) {
+	      this.setState({ value: event.target.value });
+	    }
+	  }, {
+	    key: 'handleSubmit',
+	    value: function handleSubmit(event) {
+	      document.getElementById("demo").innerHTML = 'Your favorite flavor is: ' + this.state.value;
+	      event.preventDefault();
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: '' },
+	        _react2.default.createElement(
+	          _reactMaterialize.Col,
+	          { s: 12, m: 12 },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'card center' },
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'ELECTRONICS'
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'col s12 m12' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'card horizontal cardit' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'card-image col s12 m6 hide-on-small-only' },
+	                  _react2.default.createElement('img', { className: 'col s12 m12', src: 'http://anscomputerscny.com/images/ascollage.png' })
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'card-stacked col s12 m6' },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'card-content' },
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'row' },
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'center col s12 m4' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          null,
+	                          'TVs'
+	                        ),
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'cardSS-image' },
+	                          _react2.default.createElement('img', { className: 'col s12 m12', src: 'http://images.samsung.com/is/image/samsung/my-full-hd-k6300-ua49k6300akxxm-001-front-black?$PD_GALLERY_L_JPG$' })
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'col s12 m4' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'center' },
+	                          'Mobile Phones'
+	                        ),
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'cardSS-image' },
+	                          _react2.default.createElement('img', { className: 'col s12 m12', src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-bAuaYAvLkYNmSGJIIOlTd-TpUY3BerJDm9cuPmaxB5mdtjNOSA' })
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'col s12 m4' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'center' },
+	                          'Tablets'
+	                        ),
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'cards-image' },
+	                          _react2.default.createElement('img', { className: 'col s12 m12', src: 'https://image.freepik.com/free-icon/big-tablet_318-10958.jpg' }),
+	                          _react2.default.createElement(
+	                            'a',
+	                            { className: 'btn-floating halfway-fab waves-effect waves-light grey darken-4' },
+	                            _react2.default.createElement(
+	                              'i',
+	                              { className: 'material-icons' },
+	                              'list'
+	                            )
+	                          )
+	                        )
+	                      )
+	                    ),
+	                    _react2.default.createElement(
+	                      'div',
+	                      { className: 'row hide-on-small-only' },
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'col s12 m4' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'center' },
+	                          'iPads'
+	                        ),
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'cardSS-image' },
+	                          _react2.default.createElement('img', { className: 'col s12 m12', src: 'https://www.shareicon.net/download/2015/09/28/108533_mobile_512x512.png' })
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'center col s12 m4' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          null,
+	                          'Computers'
+	                        ),
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'cardSS-image' },
+	                          _react2.default.createElement('img', { className: 'col s12 m12', src: 'https://cdn2.iconfinder.com/data/icons/ourea-icons/256/Computer_256x256-32.png' })
+	                        )
+	                      ),
+	                      _react2.default.createElement(
+	                        'div',
+	                        { className: 'col s12 m4' },
+	                        _react2.default.createElement(
+	                          'p',
+	                          { className: 'center' },
+	                          'iPhones'
+	                        ),
+	                        _react2.default.createElement(
+	                          'div',
+	                          { className: 'cards-image' },
+	                          _react2.default.createElement('img', { className: 'col s12 m12', src: 'https://cdn2.iconfinder.com/data/icons/modern-future-technology/128/mobile-phone-512.png' }),
+	                          _react2.default.createElement(
+	                            'a',
+	                            { className: 'btn-floating halfway-fab waves-effect waves-light grey darken-4' },
+	                            _react2.default.createElement(
+	                              'i',
+	                              { className: 'material-icons' },
+	                              'list'
+	                            )
+	                          )
+	                        )
+	                      )
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Home;
+	}(_react2.default.Component);
+
+	exports.default = Home;
 
 /***/ })
 /******/ ]);

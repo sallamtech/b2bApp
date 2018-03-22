@@ -101,20 +101,9 @@ class HomeTabs extends React.Component {
             
           </div>
                          
-        
       </Col>
       </div>
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-            
     );
   }
 }

@@ -5,27 +5,26 @@ import InfiniteScroll from 'react-infinite-scroller';
 import createClass from 'create-react-class';
     
 class ActiveProducts extends Component { 
+
+
+
 render() {
     
     var filterData = [
-  { name: 'Iphone 7', status: 'Featured', category: 'Phone', location: 'New York' },
-  { name: 'Chromebook', status: 'Featured', category: 'Laptop', location: 'California' },
-  { name: 'Galexy S9', status: 'Featured', category: 'Phone', location: 'New York' }
+  { name: 'Iphone 7', category: 'Phone', location: 'New York', description: 'Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time' },
+  { name: 'Samsung Chromebook', category: 'Laptop', location: 'California', description: 'Just what you need, exactly what you want Samsungs Chromebook provides the perfect balance to computing and mobility.' },
+  { name: 'Apple iMac', category: 'Computer', location: 'Buffalo', description: 'A desktop experience that draws you in and keeps you there: this is the idea behind iMac. And now that idea is more powerful.' }
 ];
 var FilterForm = createClass({
   getInitialState: function() {
     return {
       data: this.props.data,
-      status: 'Featured',
       category: '',
       location: ''
     }
   },
   filterItems: function(val, type) {
      switch (type) {
-      case 'status':
-        this.setState({status: val});
-        break;
       case 'category':
         this.setState({category: val});
         break;
@@ -39,7 +38,7 @@ var FilterForm = createClass({
   render: function() {
     var filteredItems = this.props.data;
     var state = this.state;
-    ["status", "category", "location"].forEach(function(filterBy) {
+    ["category", "location"].forEach(function(filterBy) {
       var filterValue = state[filterBy];
       if (filterValue) {
         filteredItems = filteredItems.filter(function(item) {
@@ -47,17 +46,14 @@ var FilterForm = createClass({
         });
       }
     });
-    var statusArray = this.props.data.map(function(item) { return item.status });
     var categoryArray = this.props.data.map(function(item) { return item.category });
     var locationArray = this.props.data.map(function(item) { return item.location });
-    statusArray.unshift("");
     categoryArray.unshift("");
     locationArray.unshift("");
     return (
       <div>
         <FilterOptions 
             data={this.state.data} 
-            statusOptions={statusArray} 
             categoryOptions={categoryArray}
             locationOptions={locationArray}
             changeOption={this.filterItems} />
@@ -68,6 +64,7 @@ var FilterForm = createClass({
     )
   }
 });
+
 
 var FilterOptions = createClass({
   changeOption: function(type, e) {
@@ -81,18 +78,14 @@ var FilterOptions = createClass({
                         
                         <CardPanel className='white' textClassName='black-text' filterable>
                             <Row>
-        
-          <Input label='Browse Products' s={4} type='select' defaultValue='Featured' id="status" value={this.props.status} onChange={this.changeOption.bind(this, 'status')}>
-          {this.props.statusOptions.map(function(option) {
-            return ( <option key={option} value={option}>{option}</option> )
-          })}
-          </Input>
-          <Input s={4} type='select' id="category" label='Browse Categories' value={this.props.category} onChange={this.changeOption.bind(this, 'category')}>
+                            <h5>Latest Products</h5>
+        <br/>
+          <Input s={6} type='select' id="category" label='BROWSE BY CATEGORY' value={this.props.category} onChange={this.changeOption.bind(this, 'category')}>
           {this.props.categoryOptions.map(function(option) {
             return ( <option key={option} value={option}>{option}</option> )
           })}
           </Input>
-          <Input s={4} type='select' id="location" label='Browse Locations' value={this.props.location} onChange={this.changeOption.bind(this, 'location')}>
+          <Input s={6} type='select' id="location" label='BROWSE BY LOCATION' value={this.props.location} onChange={this.changeOption.bind(this, 'location')}>
           {this.props.locationOptions.map(function(option) {
             return ( <option key={option} value={option}>{option}</option> )
           })}
@@ -104,9 +97,11 @@ var FilterOptions = createClass({
         </div>
       </div>
 
+    
       
     );
   }
+  
 });
 var FilterItems = createClass({
   render: function() {
@@ -123,7 +118,10 @@ var FilterItems = createClass({
                                 <Card 
                                 header=''
                                 className='white' textClassName='black-text' title={item.name}>
-                                    <span>New York&nbsp;&nbsp;<strong>$300 - $800</strong><br/><br/>Apple · iPhone · iPhone 7 · iPhone 7 (Original) · iOS · 4.7 in · Fingerprint Scanner · Rear Camera: 12 MP · 4G LTE · 14 hours talk time</span>
+                                <span>{item.location}</span>
+                                <br/><br/>
+                                <span><strong>$300 - $800</strong>
+                                <br/><br/>{item.description}</span>
                                 <br/><br/>
                                 <Button className='light-blue darken-4' waves='light' node='a' href='#single'>View</Button>
                                 <br/><br/>

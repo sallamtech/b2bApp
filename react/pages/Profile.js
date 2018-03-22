@@ -2,7 +2,6 @@ import React from 'react';
 import { HashRouter as Router, Route, Link, Redirect } from 'react-router-dom';
 import {Autocomplete, Input, SideNavItem, SideNav, Navbar, Icon, Button, Dropdown, NavItem, Collection, CollectionItem, Badge, Card, CardTitle, Col, Row, CardPanel, Carousel, Slider, Slide, Modal, Chip, Tag} from 'react-materialize';
 import ProductBox from '../components/product/ProductBox';
-import ActiveProducts from "../components/home/ActiveProducts";
 
 class Profile extends React.Component {
 
@@ -133,14 +132,6 @@ class Profile extends React.Component {
                         
                         </Card>
                         
-                    </Col>
-                    
-                    <Col s={12} m={12}>
-                        
-                        <CardPanel className='white' textClassName='black-text'>
-                            <h5>3 Active Products</h5>
-                        </CardPanel>
-                
                     </Col>
                     
                 </Row>

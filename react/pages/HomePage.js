@@ -6,6 +6,7 @@ import ActiveProducts from "../components/home/ActiveProducts";
 import Header from "../components/home/Header";
 import SearchForm from '../components/home/SearchForm';
 import HomeTabs from '../components/home/HomeTabs';
+import Home from '../components/home/Home';
 
 
 class HomePage extends React.Component {
@@ -23,13 +24,10 @@ class HomePage extends React.Component {
                   <Header/>
                   
                   <HomeTabs/>
-                   
+                  
+                  <Home/>
                     
                     <Col s={12} m={12}>
-                        
-                        <CardPanel className='white' textClassName='black-text'>
-                            <h5>3 Active Products</h5>
-                        </CardPanel>
                         
                         <ActiveProducts/>
                         
